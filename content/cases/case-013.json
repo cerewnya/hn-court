@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "id": "case-013",
+  "number": 13,
+  "date": "2026-11-18",
+  "title": "Tell HN: Our CTO mandated Kubernetes for a static marketing site",
+  "source": {
+    "hnItemId": 45012288,
+    "url": "https://news.ycombinator.com/item?id=45012288",
+    "points": 61,
+    "commentCount": 274,
+    "filedAt": "08:00 UTC",
+    "maxDepth": 7,
+    "sentimentFlip": -0.77
+  },
+  "witness": {
+    "handle": "anon_217",
+    "palette": {
+      "hoodie": "#3B4A3F",
+      "hair": "#5A3A22",
+      "skin": "#C98E6B",
+      "glasses": "#141412",
+      "accent": "#7EC8F2"
+    }
+  },
+  "rules": {
+    "maxTurns": 5,
+    "handSize": 4,
+    "startingCredibility": 3,
+    "maxCredibility": 5,
+    "startingComposure": 5,
+    "maxComposure": 5,
+    "turnSeconds": 120
+  },
+  "verdicts": {
+    "win": { "label": "JUST USE A CDN" },
+    "lose": { "label": "HELM CHARTS APPROVED" }
+  },
+  "jury": {
+    "againstLabel": "RULED AGAINST K8S MANDATE",
+    "witnessLabel": "SIDED WITH WITNESS"
+  },
+  "deck": [
+    { "id": "just-use-a-cdn", "title": "JUST USE A CDN", "effect": "It's HTML. Put it on an edge.", "power": 2, "risk": 1 },
+    { "id": "yagni", "title": "YAGNI", "effect": "You aren't gonna need it", "power": 1, "risk": 1 },
+    { "id": "show-the-bill", "title": "SHOW THE CLOUD BILL", "effect": "Make the witness read the invoice", "power": 2, "risk": 1 },
+    { "id": "resume-driven", "title": "RESUME-DRIVEN DEV", "effect": "Questions the real motive", "power": 2, "risk": 2 },
+    { "id": "citation-needed", "title": "CITATION NEEDED", "effect": "Demands a primary source", "power": 1, "risk": 1 },
+    { "id": "one-yaml-away", "title": "ONE YAML AWAY", "effect": "Config sprawl is the outage", "power": 2, "risk": 1 },
+    { "id": "bus-factor", "title": "BUS FACTOR OF ONE", "effect": "Who's on call at 3am?", "power": 2, "risk": 1 },
+    { "id": "static-is-fine", "title": "STATIC IS FINE", "effect": "Uptime of a file is 100%", "power": 1, "risk": 1 },
+    { "id": "moving-goalposts", "title": "MOVING GOALPOSTS", "effect": "Catches a shifting claim", "power": 2, "risk": 1 },
+    { "id": "cargo-cult", "title": "CARGO CULT", "effect": "Google-scale for 40 visitors", "power": 1, "risk": 1 },
+    { "id": "choose-boring-tech", "title": "CHOOSE BORING TECH", "effect": "Innovation tokens are finite", "power": 1, "risk": 1 },
+    { "id": "it-was-dns", "title": "IT WAS DNS", "effect": "It is always DNS", "power": 1, "risk": 2 }
+  ],
+  "startNode": "t1-mandate",
+  "outcomes": {
+    "breakdown": "v-breakdown",
+    "contempt": "v-contempt",
+    "rest": "v-rest"
+  },
+  "nodes": [
+    {
+      "id": "t1-mandate",
+      "kind": "testimony",
+      "turn": 1,
+      "author": "anon_217",
+      "depth": 3,
+      "sentimentFlip": -0.22,
+      "text": "Kubernetes for the marketing site is the right call. If it isn't in the cluster, it isn't production. Consistency beats convenience every time."
+    },
+    {
+      "id": "t2-autoscale",
+      "kind": "testimony",
+      "turn": 2,
+      "author": "anon_217",
+      "depth": 4,
+      "sentimentFlip": -0.38,
+      "text": "We need autoscaling for launch day. What happens when we hit the front page? A bucket can't scale."
+    },
+    {
+      "id": "t2-gitops",
+      "kind": "testimony",
+      "turn": 2,
+      "author": "anon_217",
+      "depth": 4,
+      "sentimentFlip": -0.29,
+      "text": "Everything goes through GitOps now. One pipeline, one source of truth, zero snowflakes."
+    },
+    {
+      "id": "t2-portable",
+      "kind": "testimony",
+      "turn": 2,
+      "author": "anon_217",
+      "depth": 4,
+      "sentimentFlip": -0.45,
+      "text": "Vendor lock-in is the real risk. Kubernetes keeps us portable across three clouds."
+    },
+    {
+      "id": "t3-nodes",
+      "kind": "testimony",
+      "turn": 3,
+      "author": "anon_217",
+      "depth": 5,
+      "sentimentFlip": -0.61,
+      "text": "Okay, it's three nodes for nine HTML pages. But the cluster was already there, so the marginal cost is zero."
+    },
+    {
+      "id": "t3-oncall",
+      "kind": "testimony",
+      "turn": 3,
+      "author": "anon_217",
+      "depth": 5,
+      "sentimentFlip": -0.7,
+      "text": "On-call is fine. I'm the only one who understands the Helm charts, which honestly proves they're working."
+    },
+    {
+      "id": "t3-big-tech",
+      "kind": "testimony",
+      "turn": 3,
+      "author": "anon_217",
+      "depth": 5,
+      "sentimentFlip": -0.55,
+      "text": "This is how every serious company runs. You don't see Google hosting their homepage on a shared bucket."
+    },
+    {
+      "id": "t4-ingress",
+      "kind": "testimony",
+      "turn": 4,
+      "author": "anon_217",
+      "depth": 6,
+      "sentimentFlip": -0.77,
+      "text": "The outage last Tuesday was an ingress misconfiguration, not Kubernetes itself. Totally different thing."
+    },
+    {
+      "id": "t4-learning",
+      "kind": "testimony",
+      "turn": 4,
+      "author": "anon_217",
+      "depth": 6,
+      "sentimentFlip": -0.64,
+      "text": "Even if it's overkill, the team learned a ton. That's worth more than a few hours of downtime."
+    },
+    {
+      "id": "t4-scale-later",
+      "kind": "testimony",
+      "turn": 4,
+      "author": "anon_217",
+      "depth": 6,
+      "sentimentFlip": -0.58,
+      "text": "We're not building for today. We're building for the scale we'll have in five years."
+    },
+    {
+      "id": "t5-cdn-fallback",
+      "kind": "testimony",
+      "turn": 5,
+      "author": "anon_217",
+      "depth": 7,
+      "sentimentFlip": -0.4,
+      "text": "...We put a CDN in front of it as a fallback. It serves most of the traffic now. That's still Kubernetes, technically."
+    },
+    {
+      "id": "t5-cluster-forever",
+      "kind": "testimony",
+      "turn": 5,
+      "author": "anon_217",
+      "depth": 7,
+      "sentimentFlip": -0.92,
+      "text": "The cluster stays. Static hosting is a toy. I will die on this hill, and the hill will have a service mesh."
+    },
+    {
+      "id": "v-breakdown",
+      "kind": "verdict",
+      "outcome": "win",
+      "author": "anon_217",
+      "stamp": "WITNESS BROKEN!",
+      "text": "...fine. It's nine HTML files. I'm moving them to a bucket and deleting the Helm chart. Please stop paging me."
+    },
+    {
+      "id": "v-contempt",
+      "kind": "verdict",
+      "outcome": "lose",
+      "author": "THE_COURT",
+      "stamp": "CONTEMPT!",
+      "text": "Counsel's objections have become a denial-of-service attack on this court. The mandate stands and the cluster stays."
+    },
+    {
+      "id": "v-rest",
+      "kind": "verdict",
+      "outcome": "lose",
+      "author": "THE_COURT",
+      "stamp": "CASE DISMISSED",
+      "text": "The witness survives cross. The marketing site will remain on a three-node cluster, as is tradition."
+    }
+  ],
+  "edges": [
+    { "from": "t1-mandate", "to": "t2-autoscale", "cards": ["just-use-a-cdn"], "ruling": "critical", "note": "The court has viewed the site. It is nine pages." },
+    { "from": "t1-mandate", "to": "t2-autoscale", "cards": ["yagni"], "ruling": "sustained" },
+    { "from": "t1-mandate", "to": "t2-gitops", "cards": ["show-the-bill"], "ruling": "sustained", "note": "The witness is directed to read the invoice aloud." },
+    { "from": "t1-mandate", "to": "t2-portable", "cards": ["resume-driven"], "ruling": "overruled", "note": "Speculation about motive. Overruled, for now." },
+    { "from": "t1-mandate", "to": "t2-portable", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t2-autoscale", "to": "t3-nodes", "cards": ["just-use-a-cdn"], "ruling": "critical", "note": "A CDN scales further than this cluster ever will." },
+    { "from": "t2-autoscale", "to": "t3-nodes", "cards": ["yagni", "static-is-fine"], "ruling": "sustained", "note": "Launch day traffic is projected at the team plus their parents." },
+    { "from": "t2-autoscale", "to": "t3-big-tech", "cards": ["citation-needed"], "ruling": "sustained" },
+    { "from": "t2-autoscale", "to": "t3-oncall", "cards": ["resume-driven"], "ruling": "overruled" },
+    { "from": "t2-autoscale", "to": "t3-oncall", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t2-gitops", "to": "t3-oncall", "cards": ["one-yaml-away"], "ruling": "critical", "note": "One pipeline, one YAML typo, one outage." },
+    { "from": "t2-gitops", "to": "t3-nodes", "cards": ["yagni", "just-use-a-cdn"], "ruling": "sustained" },
+    { "from": "t2-gitops", "to": "t3-big-tech", "cards": ["citation-needed"], "ruling": "sustained" },
+    { "from": "t2-gitops", "to": "t3-big-tech", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t2-portable", "to": "t3-nodes", "cards": ["show-the-bill"], "ruling": "critical", "note": "Three clouds, three bills, one landing page." },
+    { "from": "t2-portable", "to": "t3-big-tech", "cards": ["citation-needed"], "ruling": "sustained", "note": "Name the second cloud. Name the third." },
+    { "from": "t2-portable", "to": "t3-big-tech", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t3-nodes", "to": "t4-ingress", "cards": ["show-the-bill"], "ruling": "critical", "note": "The marginal cost is on page four of the invoice." },
+    { "from": "t3-nodes", "to": "t4-learning", "cards": ["moving-goalposts"], "ruling": "critical" },
+    { "from": "t3-nodes", "to": "t4-ingress", "cards": ["one-yaml-away"], "ruling": "sustained" },
+    { "from": "t3-nodes", "to": "t4-learning", "cards": ["bus-factor"], "ruling": "sustained" },
+    { "from": "t3-nodes", "to": "t4-scale-later", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t3-oncall", "to": "t4-ingress", "cards": ["bus-factor"], "ruling": "critical", "note": "A bus factor of one is not a feature." },
+    { "from": "t3-oncall", "to": "t4-learning", "cards": ["static-is-fine"], "ruling": "sustained" },
+    { "from": "t3-oncall", "to": "t4-ingress", "cards": ["one-yaml-away"], "ruling": "sustained" },
+    { "from": "t3-oncall", "to": "t4-scale-later", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t3-big-tech", "to": "t4-scale-later", "cards": ["cargo-cult"], "ruling": "critical", "note": "Google also has more than forty visitors a day." },
+    { "from": "t3-big-tech", "to": "t4-learning", "cards": ["resume-driven", "static-is-fine"], "ruling": "sustained" },
+    { "from": "t3-big-tech", "to": "t4-ingress", "cards": ["just-use-a-cdn"], "ruling": "sustained" },
+    { "from": "t3-big-tech", "to": "t4-scale-later", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t4-ingress", "to": "t5-cdn-fallback", "cards": ["one-yaml-away"], "ruling": "critical", "note": "The ingress is Kubernetes. The court checked." },
+    { "from": "t4-ingress", "to": "t5-cdn-fallback", "cards": ["it-was-dns", "bus-factor"], "ruling": "sustained" },
+    { "from": "t4-ingress", "to": "t5-cluster-forever", "cards": ["moving-goalposts"], "ruling": "sustained" },
+    { "from": "t4-ingress", "to": "t5-cluster-forever", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t4-learning", "to": "t5-cdn-fallback", "cards": ["resume-driven"], "ruling": "critical", "note": "Learning on production is called an incident." },
+    { "from": "t4-learning", "to": "t5-cdn-fallback", "cards": ["choose-boring-tech"], "ruling": "sustained" },
+    { "from": "t4-learning", "to": "t5-cluster-forever", "cards": ["static-is-fine"], "ruling": "sustained" },
+    { "from": "t4-learning", "to": "t5-cluster-forever", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t4-scale-later", "to": "t5-cdn-fallback", "cards": ["yagni"], "ruling": "critical", "note": "Five years from now this site will be a different site." },
+    { "from": "t4-scale-later", "to": "t5-cdn-fallback", "cards": ["show-the-bill"], "ruling": "sustained" },
+    { "from": "t4-scale-later", "to": "t5-cluster-forever", "cards": ["cargo-cult"], "ruling": "sustained" },
+    { "from": "t4-scale-later", "to": "t5-cluster-forever", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t5-cdn-fallback", "to": "v-rest", "cards": ["just-use-a-cdn", "moving-goalposts"], "ruling": "critical", "note": "The witness has described a CDN with extra steps." },
+    { "from": "t5-cdn-fallback", "to": "v-rest", "cards": ["choose-boring-tech", "static-is-fine"], "ruling": "sustained" },
+    { "from": "t5-cdn-fallback", "to": "v-rest", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t5-cluster-forever", "to": "v-rest", "cards": ["cargo-cult"], "ruling": "critical" },
+    { "from": "t5-cluster-forever", "to": "v-rest", "cards": ["it-was-dns", "choose-boring-tech", "yagni"], "ruling": "sustained" },
+    { "from": "t5-cluster-forever", "to": "v-rest", "cards": "*", "ruling": "overruled" }
+  ]
+}

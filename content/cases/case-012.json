@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "id": "case-012",
+  "number": 12,
+  "date": "2026-11-17",
+  "title": "Ask HN: If you have a strict type system, are unit tests just cargo cult?",
+  "source": {
+    "hnItemId": 45003317,
+    "url": "https://news.ycombinator.com/item?id=45003317",
+    "points": 38,
+    "commentCount": 289,
+    "filedAt": "08:00 UTC",
+    "maxDepth": 9,
+    "sentimentFlip": -0.79
+  },
+  "witness": {
+    "handle": "anon_907",
+    "palette": {
+      "hoodie": "#6B2D2D",
+      "hair": "#C9A227",
+      "skin": "#F0C9A0",
+      "glasses": "#141412",
+      "accent": "#7EC8F2"
+    }
+  },
+  "rules": {
+    "maxTurns": 5,
+    "handSize": 4,
+    "startingCredibility": 3,
+    "maxCredibility": 5,
+    "startingComposure": 5,
+    "maxComposure": 5,
+    "turnSeconds": 120
+  },
+  "verdicts": {
+    "win": { "label": "WRITE THE TESTS" },
+    "lose": { "label": "TYPES ARE ENOUGH" }
+  },
+  "jury": {
+    "againstLabel": "RULED FOR WRITING TESTS",
+    "witnessLabel": "SIDED WITH WITNESS"
+  },
+  "deck": [
+    { "id": "types-arent-behavior", "title": "TYPES AREN'T BEHAVIOR", "effect": "A sound type can still be wrong", "power": 2, "risk": 1 },
+    { "id": "off-by-one", "title": "OFF-BY-ONE EXHIBIT", "effect": "Well-typed and still wrong", "power": 2, "risk": 1 },
+    { "id": "cite-the-paper", "title": "CITE THE PAPER", "effect": "Demands the actual study", "power": 1, "risk": 1 },
+    { "id": "any-escape-hatch", "title": "THE ANY ESCAPE HATCH", "effect": "Counts the as-any casts", "power": 2, "risk": 2 },
+    { "id": "runtime-input", "title": "RUNTIME INPUT", "effect": "JSON doesn't read your types", "power": 2, "risk": 1 },
+    { "id": "refactor-fear", "title": "REFACTOR FEAR", "effect": "Who checks the rewrite?", "power": 1, "risk": 1 },
+    { "id": "regression-log", "title": "REGRESSION LOG", "effect": "Same bug, third time", "power": 2, "risk": 1 },
+    { "id": "coverage-theater", "title": "COVERAGE THEATER", "effect": "Bad tests aren't no tests", "power": 1, "risk": 1 },
+    { "id": "moving-goalposts", "title": "MOVING GOALPOSTS", "effect": "Catches a shifting claim", "power": 2, "risk": 1 },
+    { "id": "hindley-milner", "title": "HINDLEY-MILNER", "effect": "Inference isn't intent", "power": 1, "risk": 2 },
+    { "id": "prod-is-the-test", "title": "PROD IS THE TEST?", "effect": "Users are not your QA team", "power": 1, "risk": 1 },
+    { "id": "property-based", "title": "PROPERTY-BASED TESTS", "effect": "Types and tests, together", "power": 2, "risk": 1 }
+  ],
+  "startNode": "t1-cargo-cult",
+  "outcomes": {
+    "breakdown": "v-breakdown",
+    "contempt": "v-contempt",
+    "rest": "v-rest"
+  },
+  "nodes": [
+    {
+      "id": "t1-cargo-cult",
+      "kind": "testimony",
+      "turn": 1,
+      "author": "anon_907",
+      "depth": 5,
+      "sentimentFlip": -0.27,
+      "text": "If your type system is strong enough, unit tests are cargo cult. The compiler already proved the program correct."
+    },
+    {
+      "id": "t2-make-illegal",
+      "kind": "testimony",
+      "turn": 2,
+      "author": "anon_907",
+      "depth": 6,
+      "sentimentFlip": -0.41,
+      "text": "Make illegal states unrepresentable and there's nothing left to test. That's the whole point of types."
+    },
+    {
+      "id": "t2-velocity",
+      "kind": "testimony",
+      "turn": 2,
+      "author": "anon_907",
+      "depth": 6,
+      "sentimentFlip": -0.36,
+      "text": "Tests slow us down. We ship twice as fast since we deleted the test suite and leaned on the compiler."
+    },
+    {
+      "id": "t2-studies",
+      "kind": "testimony",
+      "turn": 2,
+      "author": "anon_907",
+      "depth": 6,
+      "sentimentFlip": -0.33,
+      "text": "There are studies showing static types catch most bugs. Tests just duplicate that work, badly."
+    },
+    {
+      "id": "t3-logic-bugs",
+      "kind": "testimony",
+      "turn": 3,
+      "author": "anon_907",
+      "depth": 7,
+      "sentimentFlip": -0.62,
+      "text": "Fine, logic bugs exist. But those are rare, and code review catches them anyway."
+    },
+    {
+      "id": "t3-boundaries",
+      "kind": "testimony",
+      "turn": 3,
+      "author": "anon_907",
+      "depth": 7,
+      "sentimentFlip": -0.55,
+      "text": "We validate at the boundaries with a schema library. After that, everything inside is trusted."
+    },
+    {
+      "id": "t3-bad-tests",
+      "kind": "testimony",
+      "turn": 3,
+      "author": "anon_907",
+      "depth": 7,
+      "sentimentFlip": -0.79,
+      "text": "Have you seen what most test suites look like? Mocks testing mocks. I'd rather have nothing."
+    },
+    {
+      "id": "t4-incident",
+      "kind": "testimony",
+      "turn": 4,
+      "author": "anon_907",
+      "depth": 8,
+      "sentimentFlip": -0.71,
+      "text": "The billing incident was a config issue, not code. Tests wouldn't have caught it anyway."
+    },
+    {
+      "id": "t4-qa-team",
+      "kind": "testimony",
+      "turn": 4,
+      "author": "anon_907",
+      "depth": 8,
+      "sentimentFlip": -0.5,
+      "text": "We have a QA person. Well, we had one. Now we have feature flags and good monitoring."
+    },
+    {
+      "id": "t4-haskell",
+      "kind": "testimony",
+      "turn": 4,
+      "author": "anon_907",
+      "depth": 8,
+      "sentimentFlip": -0.86,
+      "text": "In Haskell, if it compiles, it works. Your language just isn't expressive enough."
+    },
+    {
+      "id": "t5-few-tests",
+      "kind": "testimony",
+      "turn": 5,
+      "author": "anon_907",
+      "depth": 9,
+      "sentimentFlip": -0.44,
+      "text": "...We added a few tests around billing. Just the money parts. That doesn't mean I was wrong."
+    },
+    {
+      "id": "t5-compiler-proved",
+      "kind": "testimony",
+      "turn": 5,
+      "author": "anon_907",
+      "depth": 9,
+      "sentimentFlip": -0.93,
+      "text": "The compiler is my test suite. I've said what I said and I'm not deleting the comment."
+    },
+    {
+      "id": "v-breakdown",
+      "kind": "verdict",
+      "outcome": "win",
+      "author": "anon_907",
+      "stamp": "WITNESS BROKEN!",
+      "text": "...okay, the type checker didn't catch the off-by-one that double-charged 4,000 customers. I'm writing the tests."
+    },
+    {
+      "id": "v-contempt",
+      "kind": "verdict",
+      "outcome": "lose",
+      "author": "THE_COURT",
+      "stamp": "CONTEMPT!",
+      "text": "Counsel has objected the court into a stack overflow. All objections are stricken; the test suite stays deleted."
+    },
+    {
+      "id": "v-rest",
+      "kind": "verdict",
+      "outcome": "lose",
+      "author": "THE_COURT",
+      "stamp": "CASE DISMISSED",
+      "text": "The witness survives cross. Types are ruled sufficient, pending the next production incident."
+    }
+  ],
+  "edges": [
+    { "from": "t1-cargo-cult", "to": "t2-make-illegal", "cards": ["types-arent-behavior"], "ruling": "critical", "note": "A proof of shape is not a proof of behaviour." },
+    { "from": "t1-cargo-cult", "to": "t2-make-illegal", "cards": ["off-by-one"], "ruling": "sustained" },
+    { "from": "t1-cargo-cult", "to": "t2-studies", "cards": ["cite-the-paper"], "ruling": "sustained", "note": "The witness is directed to produce the proof." },
+    { "from": "t1-cargo-cult", "to": "t2-velocity", "cards": ["any-escape-hatch"], "ruling": "overruled", "note": "Hypothetical. The witness hasn't shown any code yet." },
+    { "from": "t1-cargo-cult", "to": "t2-velocity", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t2-make-illegal", "to": "t3-boundaries", "cards": ["runtime-input"], "ruling": "critical", "note": "The network does not respect your type definitions." },
+    { "from": "t2-make-illegal", "to": "t3-logic-bugs", "cards": ["off-by-one", "types-arent-behavior"], "ruling": "sustained" },
+    { "from": "t2-make-illegal", "to": "t3-boundaries", "cards": ["any-escape-hatch"], "ruling": "sustained", "note": "The court counts forty-one casts to any." },
+    { "from": "t2-make-illegal", "to": "t3-bad-tests", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t2-velocity", "to": "t3-logic-bugs", "cards": ["refactor-fear"], "ruling": "critical", "note": "Twice as fast, until the first refactor." },
+    { "from": "t2-velocity", "to": "t3-logic-bugs", "cards": ["off-by-one"], "ruling": "sustained" },
+    { "from": "t2-velocity", "to": "t3-bad-tests", "cards": ["cite-the-paper"], "ruling": "sustained" },
+    { "from": "t2-velocity", "to": "t3-bad-tests", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t2-studies", "to": "t3-boundaries", "cards": ["any-escape-hatch"], "ruling": "critical", "note": "The study did not include forty-one casts to any." },
+    { "from": "t2-studies", "to": "t3-logic-bugs", "cards": ["types-arent-behavior"], "ruling": "sustained", "note": "Even the study says types caught a minority of bugs." },
+    { "from": "t2-studies", "to": "t3-boundaries", "cards": ["runtime-input"], "ruling": "sustained" },
+    { "from": "t2-studies", "to": "t3-bad-tests", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t3-logic-bugs", "to": "t4-incident", "cards": ["regression-log", "off-by-one"], "ruling": "critical", "note": "Code review approved the same bug three times." },
+    { "from": "t3-logic-bugs", "to": "t4-qa-team", "cards": ["refactor-fear"], "ruling": "sustained" },
+    { "from": "t3-logic-bugs", "to": "t4-haskell", "cards": ["moving-goalposts"], "ruling": "sustained" },
+    { "from": "t3-logic-bugs", "to": "t4-haskell", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t3-boundaries", "to": "t4-incident", "cards": ["any-escape-hatch"], "ruling": "critical", "note": "Trusted, cast, and shipped." },
+    { "from": "t3-boundaries", "to": "t4-incident", "cards": ["runtime-input"], "ruling": "sustained" },
+    { "from": "t3-boundaries", "to": "t4-qa-team", "cards": ["regression-log"], "ruling": "sustained" },
+    { "from": "t3-boundaries", "to": "t4-haskell", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t3-bad-tests", "to": "t4-qa-team", "cards": ["coverage-theater"], "ruling": "critical", "note": "Bad tests are an argument for good tests." },
+    { "from": "t3-bad-tests", "to": "t4-qa-team", "cards": ["refactor-fear"], "ruling": "sustained" },
+    { "from": "t3-bad-tests", "to": "t4-incident", "cards": ["property-based"], "ruling": "sustained" },
+    { "from": "t3-bad-tests", "to": "t4-haskell", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t4-incident", "to": "t5-few-tests", "cards": ["moving-goalposts"], "ruling": "critical", "note": "Config is code. The court has read the YAML." },
+    { "from": "t4-incident", "to": "t5-few-tests", "cards": ["regression-log", "prod-is-the-test"], "ruling": "sustained" },
+    { "from": "t4-incident", "to": "t5-compiler-proved", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t4-qa-team", "to": "t5-few-tests", "cards": ["prod-is-the-test"], "ruling": "critical", "note": "Monitoring tells you that a user already found the bug." },
+    { "from": "t4-qa-team", "to": "t5-few-tests", "cards": ["coverage-theater"], "ruling": "sustained" },
+    { "from": "t4-qa-team", "to": "t5-compiler-proved", "cards": ["refactor-fear"], "ruling": "sustained" },
+    { "from": "t4-qa-team", "to": "t5-compiler-proved", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t4-haskell", "to": "t5-compiler-proved", "cards": ["hindley-milner"], "ruling": "critical", "note": "Inference proves types, not intent." },
+    { "from": "t4-haskell", "to": "t5-compiler-proved", "cards": ["types-arent-behavior"], "ruling": "sustained" },
+    { "from": "t4-haskell", "to": "t5-few-tests", "cards": ["off-by-one"], "ruling": "sustained" },
+    { "from": "t4-haskell", "to": "t5-compiler-proved", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t5-few-tests", "to": "v-rest", "cards": ["moving-goalposts", "property-based"], "ruling": "critical", "note": "\"Just the money parts,\" says the witness, writing tests." },
+    { "from": "t5-few-tests", "to": "v-rest", "cards": ["regression-log", "coverage-theater"], "ruling": "sustained" },
+    { "from": "t5-few-tests", "to": "v-rest", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t5-compiler-proved", "to": "v-rest", "cards": ["prod-is-the-test"], "ruling": "critical" },
+    { "from": "t5-compiler-proved", "to": "v-rest", "cards": ["hindley-milner", "types-arent-behavior", "off-by-one"], "ruling": "sustained" },
+    { "from": "t5-compiler-proved", "to": "v-rest", "cards": "*", "ruling": "overruled" }
+  ]
+}

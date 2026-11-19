@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "id": "case-014",
+  "number": 14,
+  "date": "2026-11-19",
+  "title": "Ask HN: Is shipping a CRUD backend in anything but Rust now negligent?",
+  "source": {
+    "hnItemId": 45021734,
+    "url": "https://news.ycombinator.com/item?id=45021734",
+    "points": 44,
+    "commentCount": 312,
+    "filedAt": "08:00 UTC",
+    "maxDepth": 8,
+    "sentimentFlip": -0.84
+  },
+  "witness": {
+    "handle": "anon_482",
+    "sprite": {
+      "src": "/assets/witness-014.png",
+      "headX": 0.455,
+      "headY": 0.25
+    },
+    "palette": {
+      "hoodie": "#2B2D31",
+      "hair": "#141412",
+      "skin": "#E8B48A",
+      "glasses": "#141412",
+      "accent": "#7EC8F2"
+    }
+  },
+  "rules": {
+    "maxTurns": 5,
+    "handSize": 4,
+    "startingCredibility": 3,
+    "maxCredibility": 5,
+    "startingComposure": 5,
+    "maxComposure": 5,
+    "turnSeconds": 120
+  },
+  "verdicts": {
+    "win": { "label": "JUST USE POSTGRES" },
+    "lose": { "label": "RUST REWRITE ORDERED" }
+  },
+  "jury": {
+    "againstLabel": "RULED AGAINST RUST REWRITE",
+    "witnessLabel": "SIDED WITH WITNESS"
+  },
+  "deck": [
+    { "id": "just-use-postgres", "title": "JUST USE POSTGRES", "effect": "Counters over-engineering claims", "power": 2, "risk": 1 },
+    { "id": "works-on-my-machine", "title": "WORKS ON MY MACHINE", "effect": "Deflects repro demands", "power": 1, "risk": 1 },
+    { "id": "benchmark-or-gtfo", "title": "BENCHMARK OR GTFO", "effect": "Forces witness to cite numbers", "power": 2, "risk": 1 },
+    { "id": "premature-optimization", "title": "PREMATURE OPTIMIZATION", "effect": "Classic Knuth critical hit", "power": 2, "risk": 2 },
+    { "id": "citation-needed", "title": "CITATION NEEDED", "effect": "Demands a primary source", "power": 1, "risk": 1 },
+    { "id": "io-bound", "title": "IT'S IO-BOUND", "effect": "The database is the bottleneck", "power": 2, "risk": 1 },
+    { "id": "hiring-pool", "title": "HIRING POOL REALITY", "effect": "Who maintains it after you?", "power": 2, "risk": 1 },
+    { "id": "borrow-checker-tax", "title": "BORROW CHECKER TAX", "effect": "Velocity lost to lifetimes", "power": 1, "risk": 1 },
+    { "id": "moving-goalposts", "title": "MOVING GOALPOSTS", "effect": "Catches a shifting claim", "power": 2, "risk": 1 },
+    { "id": "survivorship-bias", "title": "SURVIVORSHIP BIAS", "effect": "Failed rewrites never blog", "power": 1, "risk": 1 },
+    { "id": "choose-boring-tech", "title": "CHOOSE BORING TECH", "effect": "Innovation tokens are finite", "power": 1, "risk": 1 },
+    { "id": "riir-again", "title": "RIIR, AGAIN?", "effect": "Mocks the rewrite reflex", "power": 1, "risk": 2 }
+  ],
+  "startNode": "t1-malpractice",
+  "outcomes": {
+    "breakdown": "v-breakdown",
+    "contempt": "v-contempt",
+    "rest": "v-rest"
+  },
+  "nodes": [
+    {
+      "id": "t1-malpractice",
+      "kind": "testimony",
+      "turn": 1,
+      "author": "anon_482",
+      "depth": 4,
+      "sentimentFlip": -0.31,
+      "text": "Honestly, anyone not rewriting their CRUD backend in Rust in 2026 is committing architectural malpractice. Zero-cost abstractions pay for themselves in week one."
+    },
+    {
+      "id": "t2-p99",
+      "kind": "testimony",
+      "turn": 2,
+      "author": "anon_482",
+      "depth": 5,
+      "sentimentFlip": -0.52,
+      "text": "Fine, the database does most of the work. But our p99 went from 180ms to 9ms after the rewrite. Numbers don't lie."
+    },
+    {
+      "id": "t2-techempower",
+      "kind": "testimony",
+      "turn": 2,
+      "author": "anon_482",
+      "depth": 5,
+      "sentimentFlip": -0.47,
+      "text": "Here's your benchmark: 1.2M req/s on one core versus 40k for the Node version. TechEmpower doesn't lie."
+    },
+    {
+      "id": "t2-memory-safety",
+      "kind": "testimony",
+      "turn": 2,
+      "author": "anon_482",
+      "depth": 5,
+      "sentimentFlip": -0.61,
+      "text": "Memory safety isn't optional anymore. Every nil pointer in your Go service is a CVE waiting to happen."
+    },
+    {
+      "id": "t3-indexes",
+      "kind": "testimony",
+      "turn": 3,
+      "author": "anon_482",
+      "depth": 6,
+      "sentimentFlip": -0.84,
+      "text": "Okay, part of the p99 win was the new indexes. But the type system caught bugs we'd never have found in Python."
+    },
+    {
+      "id": "t3-seniors",
+      "kind": "testimony",
+      "turn": 3,
+      "author": "anon_482",
+      "depth": 6,
+      "sentimentFlip": -0.72,
+      "text": "Every senior engineer I respect is moving to Rust. The ecosystem is clearly mature enough for boring CRUD."
+    },
+    {
+      "id": "t3-skill-issue",
+      "kind": "testimony",
+      "turn": 3,
+      "author": "anon_482",
+      "depth": 6,
+      "sentimentFlip": -0.9,
+      "text": "You're all just scared of a compiler that tells you the truth. Skill issue."
+    },
+    {
+      "id": "t4-onboarding",
+      "kind": "testimony",
+      "turn": 4,
+      "author": "anon_482",
+      "depth": 7,
+      "sentimentFlip": -0.66,
+      "text": "Our team of three did ship it... eventually. Onboarding the fourth hire took a quarter, but that's an investment."
+    },
+    {
+      "id": "t4-serde",
+      "kind": "testimony",
+      "turn": 4,
+      "author": "anon_482",
+      "depth": 7,
+      "sentimentFlip": -0.58,
+      "text": "Fine, the CRUD parts are mostly serde and SQL. But at least it's *correct* serde and SQL."
+    },
+    {
+      "id": "t4-since-1-0",
+      "kind": "testimony",
+      "turn": 4,
+      "author": "anon_482",
+      "depth": 7,
+      "sentimentFlip": -0.88,
+      "text": "I've been writing Rust since 1.0. I don't need a benchmark to know what's fast."
+    },
+    {
+      "id": "t5-keeping-postgres",
+      "kind": "testimony",
+      "turn": 5,
+      "author": "anon_482",
+      "depth": 8,
+      "sentimentFlip": -0.4,
+      "text": "...We're keeping the Postgres. And the Django admin. For now. That is not a concession."
+    },
+    {
+      "id": "t5-future",
+      "kind": "testimony",
+      "turn": 5,
+      "author": "anon_482",
+      "depth": 8,
+      "sentimentFlip": -0.95,
+      "text": "Rust is the future and the future is now. I rest my case. Downvote me if you want."
+    },
+    {
+      "id": "v-breakdown",
+      "kind": "verdict",
+      "outcome": "win",
+      "author": "anon_482",
+      "stamp": "WITNESS BROKEN!",
+      "text": "...okay. It's fourteen tables and a login form. We're shipping the Django version. I'm deleting the blog post."
+    },
+    {
+      "id": "v-contempt",
+      "kind": "verdict",
+      "outcome": "lose",
+      "author": "THE_COURT",
+      "stamp": "CONTEMPT!",
+      "text": "Counsel has exhausted the court's patience. All objections are stricken and the Rust rewrite proceeds as planned."
+    },
+    {
+      "id": "v-rest",
+      "kind": "verdict",
+      "outcome": "lose",
+      "author": "THE_COURT",
+      "stamp": "CASE DISMISSED",
+      "text": "The witness survives cross-examination. The rewrite is approved. May your compile times be short."
+    }
+  ],
+  "edges": [
+    { "from": "t1-malpractice", "to": "t2-p99", "cards": ["just-use-postgres"], "ruling": "critical", "note": "The court notes the app is fourteen tables and a login form." },
+    { "from": "t1-malpractice", "to": "t2-p99", "cards": ["premature-optimization"], "ruling": "sustained", "note": "Knuth is admitted into evidence." },
+    { "from": "t1-malpractice", "to": "t2-techempower", "cards": ["benchmark-or-gtfo"], "ruling": "sustained", "note": "The witness is directed to produce numbers." },
+    { "from": "t1-malpractice", "to": "t2-memory-safety", "cards": ["works-on-my-machine"], "ruling": "overruled", "note": "Non-responsive. Nobody has reported a bug yet." },
+    { "from": "t1-malpractice", "to": "t2-memory-safety", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t2-p99", "to": "t3-indexes", "cards": ["benchmark-or-gtfo"], "ruling": "critical", "note": "A p99 without a flame graph is a vibe." },
+    { "from": "t2-p99", "to": "t3-indexes", "cards": ["io-bound", "citation-needed"], "ruling": "sustained" },
+    { "from": "t2-p99", "to": "t3-seniors", "cards": ["works-on-my-machine"], "ruling": "sustained", "note": "Counsel asks whether the 9ms reproduces anywhere else." },
+    { "from": "t2-p99", "to": "t3-skill-issue", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t2-techempower", "to": "t3-indexes", "cards": ["io-bound"], "ruling": "critical", "note": "Your users are not a TechEmpower harness." },
+    { "from": "t2-techempower", "to": "t3-seniors", "cards": ["premature-optimization"], "ruling": "critical", "note": "Nobody asked for 1.2M req/s. The app has 300 users." },
+    { "from": "t2-techempower", "to": "t3-indexes", "cards": ["just-use-postgres", "citation-needed"], "ruling": "sustained" },
+    { "from": "t2-techempower", "to": "t3-skill-issue", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t2-memory-safety", "to": "t3-seniors", "cards": ["citation-needed"], "ruling": "sustained", "note": "Which CVE, specifically?" },
+    { "from": "t2-memory-safety", "to": "t3-seniors", "cards": ["just-use-postgres"], "ruling": "sustained", "note": "The CRUD layer holds no raw pointers. Postgres does the hard part." },
+    { "from": "t2-memory-safety", "to": "t3-skill-issue", "cards": ["benchmark-or-gtfo"], "ruling": "overruled", "note": "Speed is not at issue. The witness is talking about safety." },
+    { "from": "t2-memory-safety", "to": "t3-skill-issue", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t3-indexes", "to": "t4-onboarding", "cards": ["moving-goalposts"], "ruling": "critical", "note": "First it was speed. Now it is types. The court notices." },
+    { "from": "t3-indexes", "to": "t4-onboarding", "cards": ["borrow-checker-tax", "hiring-pool"], "ruling": "sustained" },
+    { "from": "t3-indexes", "to": "t4-serde", "cards": ["works-on-my-machine", "citation-needed"], "ruling": "sustained" },
+    { "from": "t3-indexes", "to": "t4-serde", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t3-seniors", "to": "t4-onboarding", "cards": ["survivorship-bias"], "ruling": "critical", "note": "The seniors whose rewrites failed did not write blog posts." },
+    { "from": "t3-seniors", "to": "t4-serde", "cards": ["choose-boring-tech"], "ruling": "critical", "note": "If it is boring CRUD, it deserves boring tech." },
+    { "from": "t3-seniors", "to": "t4-onboarding", "cards": ["hiring-pool"], "ruling": "sustained" },
+    { "from": "t3-seniors", "to": "t4-since-1-0", "cards": ["riir-again"], "ruling": "overruled", "note": "The court does not admit memes into evidence." },
+    { "from": "t3-seniors", "to": "t4-since-1-0", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t3-skill-issue", "to": "t4-onboarding", "cards": ["hiring-pool"], "ruling": "critical", "note": "\"Skill issue\" is a hiring plan, not an argument." },
+    { "from": "t3-skill-issue", "to": "t4-serde", "cards": ["borrow-checker-tax"], "ruling": "sustained" },
+    { "from": "t3-skill-issue", "to": "t4-since-1-0", "cards": ["riir-again"], "ruling": "sustained", "note": "Grudgingly sustained. The gallery laughed." },
+    { "from": "t3-skill-issue", "to": "t4-since-1-0", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t4-onboarding", "to": "t5-keeping-postgres", "cards": ["hiring-pool"], "ruling": "critical", "note": "A quarter of onboarding for a CRUD app. Let the record show." },
+    { "from": "t4-onboarding", "to": "t5-keeping-postgres", "cards": ["choose-boring-tech", "just-use-postgres"], "ruling": "sustained" },
+    { "from": "t4-onboarding", "to": "t5-future", "cards": ["borrow-checker-tax"], "ruling": "sustained" },
+    { "from": "t4-onboarding", "to": "t5-future", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t4-serde", "to": "t5-keeping-postgres", "cards": ["just-use-postgres"], "ruling": "critical", "note": "The SQL was already correct. Postgres wrote the query plan." },
+    { "from": "t4-serde", "to": "t5-keeping-postgres", "cards": ["io-bound", "moving-goalposts"], "ruling": "sustained" },
+    { "from": "t4-serde", "to": "t5-future", "cards": ["works-on-my-machine"], "ruling": "sustained" },
+    { "from": "t4-serde", "to": "t5-future", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t4-since-1-0", "to": "t5-future", "cards": ["benchmark-or-gtfo"], "ruling": "critical", "note": "Then the witness won't mind producing one." },
+    { "from": "t4-since-1-0", "to": "t5-future", "cards": ["citation-needed", "survivorship-bias"], "ruling": "sustained" },
+    { "from": "t4-since-1-0", "to": "t5-future", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t5-keeping-postgres", "to": "v-rest", "cards": ["moving-goalposts", "just-use-postgres"], "ruling": "critical", "note": "\"Not a concession,\" says the witness, conceding." },
+    { "from": "t5-keeping-postgres", "to": "v-rest", "cards": ["survivorship-bias", "choose-boring-tech", "hiring-pool"], "ruling": "sustained" },
+    { "from": "t5-keeping-postgres", "to": "v-rest", "cards": "*", "ruling": "overruled" },
+
+    { "from": "t5-future", "to": "v-rest", "cards": ["survivorship-bias"], "ruling": "critical", "note": "The future has a 40-minute clean build." },
+    { "from": "t5-future", "to": "v-rest", "cards": ["riir-again", "moving-goalposts", "choose-boring-tech"], "ruling": "sustained" },
+    { "from": "t5-future", "to": "v-rest", "cards": "*", "ruling": "overruled" }
+  ]
+}
